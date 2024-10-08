@@ -1,0 +1,38 @@
+{
+  "recommendations": [
+    "usernamehw.errorlens",
+    "DavidAnson.vscode-markdownlint",
+    "tamasfe.even-better-toml",
+    "golang.go",
+    "zxh404.vscode-proto3",
+    "wayou.vscode-todo-highlight",
+    "Gruntfuggly.todo-tree",
+    "adpyke.codesnap",
+    "wmaurer.change-case",
+    "antfu.array-index-inlay",
+    "shalldie.background",
+    // JS/TS
+    "Vue.volar",
+    "sdras.vue-vscode-snippets",
+    "dbaeumer.vscode-eslint",
+    "deinsoftware.vitest-snippets",
+    "dbaeumer.vscode-eslint",
+    "bradlc.vscode-tailwindcss",
+    "tauri-apps.tauri-vscode",
+    "antfu.unocss",
+    "vitest.explorer",
+    "meganrogge.template-string-converter",
+    "jasonnutter.search-node-modules",
+    // Vim
+    // I use the cuixiaorui.cvim plugin instead of vscodevim.vim because it provides very convenient flash jumps
+    "cuixiaorui.cvim",
+    // Delete the function under the cursor
+    "cuixiaorui.delete-function",
+    // Quickly toggle boolea, change `true` to `false` or `fase` to `true`
+    "silesky.toggle-boolean",
+    // Rust
+    "xaver.clang-format",
+    "vadimcn.vscode-lldb",
+    "rust-lang.rust-analyzer"
+  ]
+}

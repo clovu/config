@@ -1,10 +1,11 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
+  // Can be create a file from anywhere to the current
   {
     "key": "cmd+n",
     "command": "explorer.newFile"
   },
-  // 新建文件/文件夹
+  // Create a new file
   {
     "key": "a",
     "command": "explorer.newFile",
@@ -15,11 +16,12 @@
     "command": "explorer.newFolder",
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
   },
+  // Can be create a folder from anywhere to the current
   {
     "key": "shift+cmd+n",
     "command": "explorer.newFolder"
   },
-  // 复制/剪切/粘贴
+  // copy/cut/paste takes effect in explorer
   {
     "key": "y",
     "command": "filesExplorer.copy",
@@ -105,6 +107,7 @@
     "when": "terminalFocus"
   },
   // 上下拉伸终端（快捷键原本是编辑器整体放大缩小, 被我禁用了）
+  // Resize terminal (default is the editor window zoom in and out)
   {
     "key": "cmd+shift+-",
     "command": "workbench.action.terminal.resizePaneDown",
@@ -138,16 +141,14 @@
     "command": "workbench.action.terminal.focusNext",
     "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
   },
-  // 可以从终端返回编辑区中而不关闭终端
+  // You can return to the editing area from the terminal without closing the terminal.
   {
     "key": "cmd+shift+k",
     "command": "workbench.action.navigateUp",
     "when": "terminal.active && terminalFocus"
   },
-
   {
     "key": "cmd+shift+i",
     "command": "workbench.action.terminal.focus"
   }
 ]
-
