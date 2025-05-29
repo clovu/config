@@ -2,27 +2,25 @@
   // ========== Visuals ==========
   "editor.cursorSmoothCaretAnimation": "on",
   // font: DM Mono, Geist Mono, PT Mono, input serif, Caskaydia Mono, Comic code, Space Mono, Consolas, ComicCode-Medium, Fira Code, CaskaydiaMono Nerd Font Mono, input mono, monospace
-  // "editor.fontFamily": "SFMono-Medium",
-  "editor.fontFamily": "Cascadia Code",
-  // fontsize
-  "editor.fontSize": 12,
-  "editor.lineHeight": 1.6,
-  "workbench.activityBar.location": "top",
+  "editor.fontFamily": "LigaComicMono, IBMPlexMono-Regular",
+  // "editor.fontFamily": "Fira Code, Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace",
+  "editor.fontSize": 13,
+  "editor.lineHeight": 1.7,
+  "editor.fontLigatures": true,
   "editor.bracketPairColorization.enabled": true,
   "editor.guides.bracketPairs": "active",
-  "editor.renderWhitespace": "boundary",
+  "editor.renderWhitespace": "selection",
+  "editor.minimap.maxColumn": 40,
   "editor.minimap.enabled": true,
-  "editor.minimap.maxColumn": 70,
+  "workbench.activityBar.location": "top",
   "workbench.editor.showTabs": "none",
   "workbench.editor.tabActionLocation": "left",
-  "workbench.fontAliasing": "antialiased",
+  // "workbench.fontAliasing": "antialiased",
   "workbench.list.smoothScrolling": true,
   "workbench.settings.editor": "json",
-  "workbench.productIconTheme": "icons-carbon",
   "workbench.startupEditor": "newUntitledFile",
   "workbench.tree.expandMode": "singleClick",
   "workbench.tree.indent": 15,
-  "window.zoomLevel": 0.5,
   "explorer.compactFolders": false,
   // ========== Editor ==========
   "debug.onTaskErrors": "debugAnyway",
@@ -35,10 +33,6 @@
   "editor.unicodeHighlight.invisibleCharacters": false,
   "editor.stickyScroll.enabled": true,
   "editor.hover.sticky": true,
-  "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
-  },
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "files.eol": "\n",
@@ -49,8 +43,10 @@
   "git.enableSmartCommit": true,
   "git.untrackedChanges": "separate",
   "scm.diffDecorationsGutterWidth": 2,
+  "terminal.integrated.stickyScroll.enabled": true,
   "terminal.integrated.cursorBlinking": true,
-  "terminal.integrated.cursorStyle": "line",
+  // "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
+  "terminal.integrated.cursorStyle": "block",
   "terminal.integrated.fontWeight": "400",
   "terminal.integrated.persistentSessionReviveProcess": "never",
   "terminal.integrated.tabs.enabled": true,
@@ -80,10 +76,10 @@
     "**/public": true,
     "**/temp": true,
     "**/yarn.lock": true,
+    "**/Cargo.lock": true,
     "**/CHANGELOG*": true,
     "**/LICENSE*": true
   },
-  "json.schemaDownload.enable": false,
   // ==========  Global Level Config, needs to put in User Settings ==========
   "window.dialogStyle": "custom",
   "window.nativeTabs": false, // this is great, macOS only
@@ -94,6 +90,7 @@
   "window.title": "${activeEditorShort}",
   "window.titleBarStyle": "custom",
   "window.restoreWindows": "none",
+  "window.confirmSaveUntitledWorkspace": false,
   // ========== Extension configs ==========
   "emmet.showSuggestionsAsSnippets": true,
   "emmet.triggerExpansionOnTab": false,
@@ -233,15 +230,63 @@
   "prettier.printWidth": 200,
   "prettier.semi": false,
   "prettier.singleQuote": true,
-  // ============== background ==============
-  "background.customImages": [
-    "file:///Users/clover/Library/Mobile%20Documents/com~apple~CloudDocs/images/funingna2.png"
-  ],
-  "background.style": {
-    "background-position": "90% 100%",
-    "background-size": "auto 350px",
-    "opacity": 0.2
+  // editor background
+  "background.editor": {
+    "useFront": true,
+    "style": {
+      "background-position": "100% 100%",
+      "background-size": "auto 350px",
+      "opacity": 0.3
+    },
+    "images": [
+      "file:///Users/clovu/edit-bg/furina2.png"
+    ]
   },
+  // Rust-raleted
+  "[rust]": {
+    "editor.rulers": [
+      100
+    ]
+  },
+  // close inner type hints
+  "rust-analyzer.inlayHints.typeHints.enable": true,
+  "rust-analyzer.inlayHints.parameterHints.enable": true,
+  "rust-analyzer.procMacro.attributes.enable": true,
+  "rust-analyzer.cargo.autoreload": true,
+  "rust-analyzer.check.command": "clippy",
+  "rust-analyzer.cachePriming.enable": false,
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[go]": {
+    "editor.insertSpaces": false,
+    "editor.formatOnSave": true,
+    "editor.rulers": [
+      100
+    ]
+  },
+  "go.toolsManagement.autoUpdate": true,
+  "svelte.enable-ts-plugin": true,
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "hediet.vscode-drawio.resizeImages": null,
+  "window.density.editorTabHeight": "compact",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "arrayIndexInlay.enabled": true,
+  "workbench.iconTheme": "Monokai Classic Icons",
+  "workbench.colorTheme": "Best Themes - Andromeda Mariana",
+  "codesnap.backgroundColor": "",
+  "workbench.editor.editorActionsLocation": "hidden",
+  "[vue]": {
+    "editor.defaultFormatter": "Vue.volar"
+  },
+  "editor.gotoLocation.multipleDefinitions": "goto",
+  "workbench.productIconTheme": "icons-carbon",
+  "makefile.configureOnOpen": false,
+  // AI about
+  "chat.agent.enabled": true,
   // ============== vim ==============
   "vim.flash.enable": true,
   "vim.foldfix": true,
@@ -264,22 +309,6 @@
       ],
       "commands": [
         "workbench.action.files.save"
-      ]
-    },
-    {
-      "after": [
-        "^"
-      ],
-      "before": [
-        "H"
-      ]
-    },
-    {
-      "after": [
-        "$"
-      ],
-      "before": [
-        "L"
       ]
     },
     {
@@ -307,22 +336,6 @@
       ],
       "commands": [
         "editor.action.marker.next"
-      ]
-    },
-    {
-      "after": [
-        "<C-D>"
-      ],
-      "before": [
-        "J"
-      ]
-    },
-    {
-      "after": [
-        "<C-U>"
-      ],
-      "before": [
-        "K"
       ]
     },
     {
@@ -362,6 +375,38 @@
       "commands": [
         "workbench.action.closeGroup",
         "workbench.action.closeActiveEditor"
+      ]
+    },
+    {
+      "after": [
+        "^"
+      ],
+      "before": [
+        "H"
+      ]
+    },
+    {
+      "after": [
+        "$"
+      ],
+      "before": [
+        "L"
+      ]
+    },
+    {
+      "after": [
+        "<C-D>"
+      ],
+      "before": [
+        "J"
+      ]
+    },
+    {
+      "after": [
+        "<C-U>"
+      ],
+      "before": [
+        "K"
       ]
     }
   ],
@@ -425,67 +470,6 @@
       "commands": [
         "workbench.action.files.save"
       ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "c",
-        "c"
-      ],
-      "commands": [
-        "extension.changeCase.commands"
-      ]
     }
-  ],
-  "workbench.iconTheme": "eq-material-theme-icons-ocean",
-  "window.confirmSaveUntitledWorkspace": false,
-  "[vue]": {
-    "editor.defaultFormatter": "Vue.volar"
-  },
-  "[rust]": {
-    "editor.rulers": [
-      120
-    ]
-  },
-  // close inner type hints
-  "rust-analyzer.inlayHints.typeHints.enable": false,
-  "rust-analyzer.inlayHints.parameterHints.enable": false,
-  "rust-analyzer.procMacro.attributes.enable": true,
-  "[javascript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
-  },
-  "[java]": {
-    "editor.suggest.snippetsPreventQuickSuggestions": false,
-    "editor.rulers": [
-      120
-    ],
-    "editor.defaultFormatter": "redhat.java"
-  },
-  "[json]": {
-    "editor.quickSuggestions": {
-      "strings": true
-    },
-    "editor.suggest.insertMode": "replace"
-  },
-  "[go]": {
-    "editor.insertSpaces": false,
-    "editor.formatOnSave": true,
-    "editor.rulers": [
-      120
-    ]
-  },
-  "go.toolsManagement.autoUpdate": true,
-  "redhat.telemetry.enabled": true,
-  "[proto3]": {
-    "editor.defaultFormatter": "zxh404.vscode-proto3"
-  },
-  "svelte.enable-ts-plugin": true,
-  "javascript.updateImportsOnFileMove.enabled": "never",
-  "hediet.vscode-drawio.resizeImages": null,
-  "window.density.editorTabHeight": "compact",
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "workbench.colorTheme": "Vitesse Dark"
+  ]
 }

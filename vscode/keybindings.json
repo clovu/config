@@ -1,11 +1,10 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
-  // Can be create a file from anywhere to the current
   {
     "key": "cmd+n",
     "command": "explorer.newFile"
   },
-  // Create a new file
+  // 新建文件/文件夹
   {
     "key": "a",
     "command": "explorer.newFile",
@@ -16,12 +15,11 @@
     "command": "explorer.newFolder",
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
   },
-  // Can be create a folder from anywhere to the current
   {
     "key": "shift+cmd+n",
     "command": "explorer.newFolder"
   },
-  // copy/cut/paste takes effect in explorer
+  // 复制/剪切/粘贴
   {
     "key": "y",
     "command": "filesExplorer.copy",
@@ -36,10 +34,6 @@
     "key": "p",
     "command": "filesExplorer.paste",
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
-  },
-  {
-    "key": "cmd+o",
-    "command": "projectManager.listGitProjects#sideBarGit"
   },
   {
     "key": "ctrl+=",
@@ -77,11 +71,6 @@
     "when": "editorTextFocus && vim.active && !inDebugRepl"
   },
   {
-    "key": "cmd+i",
-    "command": "-codegeex.expandInlineChat",
-    "when": "codegeex.enableComment"
-  },
-  {
     "key": "cmd+f",
     "command": "togglePeekWidgetFocus",
     "when": "inReferenceSearchEditor || referenceSearchVisible"
@@ -107,7 +96,6 @@
     "when": "terminalFocus"
   },
   // 上下拉伸终端（快捷键原本是编辑器整体放大缩小, 被我禁用了）
-  // Resize terminal (default is the editor window zoom in and out)
   {
     "key": "cmd+shift+-",
     "command": "workbench.action.terminal.resizePaneDown",
@@ -141,7 +129,7 @@
     "command": "workbench.action.terminal.focusNext",
     "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
   },
-  // You can return to the editing area from the terminal without closing the terminal.
+  // 可以从终端返回编辑区中而不关闭终端
   {
     "key": "cmd+shift+k",
     "command": "workbench.action.navigateUp",
@@ -150,5 +138,15 @@
   {
     "key": "cmd+shift+i",
     "command": "workbench.action.terminal.focus"
-  }
+  },
+  {
+    "key": "cmd+k cmd+0",
+    "command": "workbench.files.action.collapseExplorerFolders",
+    "when": "filesExplorerFocus"
+  },
+  {
+    "key": "cmd+o",
+    "command": "workbench.action.openRecent"
+  },
+  { "key": "cmd+g", "command": "editor.action.triggerSuggest", "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible" }
 ]

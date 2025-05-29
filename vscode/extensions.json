@@ -11,6 +11,9 @@
     "wmaurer.change-case",
     "antfu.array-index-inlay",
     "shalldie.background",
+    // theme
+    "lakshits11.best-themes-redefined",
+    "monokai.theme-monokai-pro-vscode",
     // JS/TS
     "Vue.volar",
     "sdras.vue-vscode-snippets",
