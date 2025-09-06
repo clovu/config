@@ -1,38 +1,39 @@
 {
-  // ========== Visuals ==========
+  // ===================== Visuals =====================
   "editor.cursorSmoothCaretAnimation": "on",
-  // font: DM Mono, Geist Mono, PT Mono, input serif, Caskaydia Mono, Comic code, Space Mono, Consolas, ComicCode-Medium, Fira Code, CaskaydiaMono Nerd Font Mono, input mono, monospace
-  "editor.fontFamily": "LigaComicMono, IBMPlexMono-Regular",
-  // "editor.fontFamily": "Fira Code, Consolas, Monaco, Andale Mono, Ubuntu Mono, monospace",
-  "editor.fontSize": 13,
-  "editor.lineHeight": 1.7,
+  "editor.fontFamily": "Cascadia Mono, Consolas, LigaComicMono, monospace",
   "editor.fontLigatures": true,
+  "editor.fontWeight": "400",
+  "editor.lineHeight": 1.6,
   "editor.bracketPairColorization.enabled": true,
   "editor.guides.bracketPairs": "active",
   "editor.renderWhitespace": "selection",
   "editor.minimap.maxColumn": 40,
   "editor.minimap.enabled": true,
+  "workbench.iconTheme": "icons",
   "workbench.activityBar.location": "top",
   "workbench.editor.showTabs": "none",
   "workbench.editor.tabActionLocation": "left",
-  // "workbench.fontAliasing": "antialiased",
   "workbench.list.smoothScrolling": true,
   "workbench.settings.editor": "json",
   "workbench.startupEditor": "newUntitledFile",
   "workbench.tree.expandMode": "singleClick",
-  "workbench.tree.indent": 15,
+  "workbench.tree.indent": 16,
   "explorer.compactFolders": false,
-  // ========== Editor ==========
+  "window.zoomLevel": 0.5,
+
+  // ===================== Editor =====================
   "debug.onTaskErrors": "debugAnyway",
   "editor.wordSeparators": "`~!@#%^&*()=+[{]}\\|;:'\",.<>/?",
   "editor.find.addExtraSpaceOnTop": false,
   "editor.inlineSuggest.enabled": true,
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.suggestSelection": "first",
-  "editor.tabSize": 2,
+  "editor.tabSize": 4,
   "editor.unicodeHighlight.invisibleCharacters": false,
   "editor.stickyScroll.enabled": true,
   "editor.hover.sticky": true,
+  "editor.gotoLocation.multipleDefinitions": "goto",
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "files.eol": "\n",
@@ -45,7 +46,6 @@
   "scm.diffDecorationsGutterWidth": 2,
   "terminal.integrated.stickyScroll.enabled": true,
   "terminal.integrated.cursorBlinking": true,
-  // "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
   "terminal.integrated.cursorStyle": "block",
   "terminal.integrated.fontWeight": "400",
   "terminal.integrated.persistentSessionReviveProcess": "never",
@@ -80,95 +80,82 @@
     "**/CHANGELOG*": true,
     "**/LICENSE*": true
   },
-  // ==========  Global Level Config, needs to put in User Settings ==========
+
+  // ===================== Global Window =====================
   "window.dialogStyle": "custom",
-  "window.nativeTabs": false, // this is great, macOS only
+  "window.nativeTabs": false,
   "window.openFoldersInNewWindow": "off",
-  "extensions.autoUpdate": "onlyEnabledExtensions",
   "window.autoDetectHighContrast": false,
   "window.commandCenter": false,
   "window.title": "${activeEditorShort}",
   "window.titleBarStyle": "custom",
   "window.restoreWindows": "none",
   "window.confirmSaveUntitledWorkspace": false,
-  // ========== Extension configs ==========
+  "window.density.editorTabHeight": "compact",
+
+  // ===================== Extensions =====================
+  "extensions.autoUpdate": "onlyEnabledExtensions",
   "emmet.showSuggestionsAsSnippets": true,
   "emmet.triggerExpansionOnTab": false,
-  "errorLens.enabledDiagnosticLevels": [
-    "warning",
-    "error"
-  ],
-  "errorLens.excludeBySource": [
-    "cSpell",
-    "eslint"
-  ],
-  // toml
+  "errorLens.enabledDiagnosticLevels": ["warning", "error"],
+  "errorLens.excludeBySource": ["cSpell", "eslint"],
+
+  // ===================== Formatter Configs =====================
   "[toml]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    "editor.defaultFormatter": "tamasfe.even-better-toml",
+    "editor.formatOnSave": true
   },
-  // ESLint config: https://github.com/antfu/eslint-config
-  "eslint.codeAction.showDocumentation": {
-    "enable": true
+  "evenBetterToml.formatter.reorderArrays": false,
+  "evenBetterToml.formatter.reorderKeys": true,
+  "[rust]": {
+    "editor.rulers": [100],
+    "editor.defaultFormatter": "rust-lang.rust-analyzer",
+    "editor.formatOnSave": true
   },
+  "rust-analyzer.check.extraArgs": ["--all-features", "--tests"],
+  "rust-analyzer.rustfmt.extraArgs": ["--config", "imports_granularity=Item"],
+  "rust-analyzer.checkOnSave": true,
+  "rust-analyzer.check.command": "clippy",
+  "rust-analyzer.cachePriming.enable": true,
+  "[javascript]": { "editor.defaultFormatter": "vscode.typescript-language-features" },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features",
+    "editor.formatOnSave": true
+  },
+  "[go]": {
+    "editor.insertSpaces": false,
+    "editor.formatOnSave": true,
+    "editor.rulers": [100]
+  },
+  "go.toolsManagement.autoUpdate": true,
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "[vue]": { "editor.defaultFormatter": "Vue.volar" },
+
+  // ===================== ESLint / CSpell =====================
+  "eslint.codeAction.showDocumentation": { "enable": true },
   "eslint.quiet": true,
-  // Silent the stylistic rules in you IDE, but still auto fix them
   "eslint.rules.customizations": [
-    {
-      "rule": "style/*",
-      "severity": "off"
-    },
-    {
-      "rule": "format/*",
-      "severity": "off"
-    },
-    {
-      "rule": "*-indent",
-      "severity": "off"
-    },
-    {
-      "rule": "*-spacing",
-      "severity": "off"
-    },
-    {
-      "rule": "*-spaces",
-      "severity": "off"
-    },
-    {
-      "rule": "*-order",
-      "severity": "off"
-    },
-    {
-      "rule": "*-dangle",
-      "severity": "off"
-    },
-    {
-      "rule": "*-newline",
-      "severity": "off"
-    },
-    {
-      "rule": "*quotes",
-      "severity": "off"
-    },
-    {
-      "rule": "*semi",
-      "severity": "off"
-    }
+    { "rule": "style/*", "severity": "off" },
+    { "rule": "format/*", "severity": "off" },
+    { "rule": "*-indent", "severity": "off" },
+    { "rule": "*-spacing", "severity": "off" },
+    { "rule": "*-spaces", "severity": "off" },
+    { "rule": "*-order", "severity": "off" },
+    { "rule": "*-dangle", "severity": "off" },
+    { "rule": "*-newline", "severity": "off" },
+    { "rule": "*quotes", "severity": "off" },
+    { "rule": "*semi", "severity": "off" }
   ],
   "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-    "vue",
-    "html",
-    "markdown",
-    "json",
-    "jsonc",
-    "yaml",
-    "toml"
+    "javascript", "javascriptreact", "typescript", "typescriptreact",
+    "vue", "html", "markdown", "json", "jsonc", "yaml", "toml"
   ],
   "cSpell.allowCompoundWords": true,
   "cSpell.language": "en,en-US",
+  "cSpell.userWords": ["cfgs", "clovu", "iconify", "objc", "tauri"],
+
+  // ===================== Misc =====================
   "css.lint.unknownAtRules": "ignore",
   "githubIssues.workingIssueFormatScm": "#${issueNumberLabel}",
   "githubPullRequests.fileListLayout": "tree",
@@ -177,47 +164,14 @@
   "gitlens.launchpad.indicator.enabled": false,
   "gitlens.codeLens.recentChange.enabled": false,
   "gitlens.menus": {
-    "editor": {
-      "blame": false,
-      "clipboard": true,
-      "compare": true,
-      "history": false,
-      "remote": false
-    },
-    "editorGroup": {
-      "blame": true,
-      "compare": false
-    },
-    "editorTab": {
-      "clipboard": true,
-      "compare": true,
-      "history": true,
-      "remote": true
-    },
-    "explorer": {
-      "clipboard": true,
-      "compare": true,
-      "history": true,
-      "remote": true
-    },
-    "scm": {
-      "authors": true
-    },
-    "scmGroup": {
-      "compare": true,
-      "openClose": true,
-      "stash": true
-    },
-    "scmGroupInline": {
-      "stash": true
-    },
-    "scmItem": {
-      "clipboard": true,
-      "compare": true,
-      "history": true,
-      "remote": false,
-      "stash": true
-    }
+    "editor": {"blame": false, "clipboard": true, "compare": true, "history": false, "remote": false},
+    "editorGroup": {"blame": true, "compare": false},
+    "editorTab": {"clipboard": true, "compare": true, "history": true, "remote": true},
+    "explorer": {"clipboard": true, "compare": true, "history": true, "remote": true},
+    "scm": {"authors": true},
+    "scmGroup": {"compare": true, "openClose": true, "stash": true},
+    "scmGroupInline": {"stash": true},
+    "scmItem": {"clipboard": true, "compare": true, "history": true, "remote": false, "stash": true}
   },
   "i18n-ally.autoDetection": false,
   "i18n-ally.displayLanguage": "en",
@@ -225,251 +179,59 @@
   "iconify.annotations": true,
   "iconify.inplace": true,
   "svg.preview.mode": "svg",
-  // I only use Prettier for manually formatting
   "prettier.enable": false,
   "prettier.printWidth": 200,
   "prettier.semi": false,
   "prettier.singleQuote": true,
-  // editor background
   "background.editor": {
     "useFront": true,
-    "style": {
+    "style": { 
       "background-position": "100% 100%",
       "background-size": "auto 350px",
       "opacity": 0.3
     },
-    "images": [
-      "file:///Users/clovu/edit-bg/furina2.png"
-    ]
+    "images": ["file:///Users/clovu/edit-bg/furina2.png"]
   },
-  // Rust-raleted
-  "[rust]": {
-    "editor.rulers": [
-      100
-    ]
-  },
-  // close inner type hints
-  "rust-analyzer.inlayHints.typeHints.enable": true,
-  "rust-analyzer.inlayHints.parameterHints.enable": true,
-  "rust-analyzer.procMacro.attributes.enable": true,
-  "rust-analyzer.cargo.autoreload": true,
-  "rust-analyzer.check.command": "clippy",
-  "rust-analyzer.cachePriming.enable": false,
-  "[javascript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
-  },
-  "[go]": {
-    "editor.insertSpaces": false,
-    "editor.formatOnSave": true,
-    "editor.rulers": [
-      100
-    ]
-  },
-  "go.toolsManagement.autoUpdate": true,
-  "svelte.enable-ts-plugin": true,
-  "javascript.updateImportsOnFileMove.enabled": "never",
-  "hediet.vscode-drawio.resizeImages": null,
-  "window.density.editorTabHeight": "compact",
-  "typescript.updateImportsOnFileMove.enabled": "always",
   "arrayIndexInlay.enabled": true,
-  "workbench.iconTheme": "Monokai Classic Icons",
-  "workbench.colorTheme": "Best Themes - Andromeda Mariana",
+  "workbench.colorTheme": "Best Themes - Monokai Pirokai Arctic Frost",
   "codesnap.backgroundColor": "",
   "workbench.editor.editorActionsLocation": "hidden",
-  "[vue]": {
-    "editor.defaultFormatter": "Vue.volar"
-  },
-  "editor.gotoLocation.multipleDefinitions": "goto",
-  "workbench.productIconTheme": "icons-carbon",
   "makefile.configureOnOpen": false,
-  // AI about
   "chat.agent.enabled": true,
-  // ============== vim ==============
+
+  // ===================== Vim =====================
   "vim.flash.enable": true,
   "vim.foldfix": true,
   "vim.highlightedyank.enable": true,
   "vim.leader": "<space>",
-  "vim.normalModeKeyBindings": [
-    {
-      "before": [
-        "<leader>",
-        "r"
-      ],
-      "commands": [
-        "editor.action.rename"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "w"
-      ],
-      "commands": [
-        "workbench.action.files.save"
-      ]
-    },
-    {
-      "before": [
-        "leader",
-        "k"
-      ],
-      "commands": [
-        "editor.action.showHover"
-      ]
-    },
-    {
-      "before": [
-        "[",
-        "e"
-      ],
-      "commands": [
-        "editor.action.marker.prev"
-      ]
-    },
-    {
-      "before": [
-        "]",
-        "e"
-      ],
-      "commands": [
-        "editor.action.marker.next"
-      ]
-    },
-    {
-      "before": [
-        "<space>",
-        "d",
-        "f"
-      ],
-      "commands": [
-        "delete-function.deleteFunction"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "i"
-      ],
-      "commands": [
-        "extension.toggleBool"
-      ],
-      "when": "editorTextFocus"
-    },
-    {
-      "before": [
-        "<leader>",
-        "b"
-      ],
-      "commands": [
-        "editor.action.revealDefinition"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "q"
-      ],
-      "commands": [
-        "workbench.action.closeGroup",
-        "workbench.action.closeActiveEditor"
-      ]
-    },
-    {
-      "after": [
-        "^"
-      ],
-      "before": [
-        "H"
-      ]
-    },
-    {
-      "after": [
-        "$"
-      ],
-      "before": [
-        "L"
-      ]
-    },
-    {
-      "after": [
-        "<C-D>"
-      ],
-      "before": [
-        "J"
-      ]
-    },
-    {
-      "after": [
-        "<C-U>"
-      ],
-      "before": [
-        "K"
-      ]
-    }
-  ],
-  "vim.operatorPendingModeKeyBindings": [
-    {
-      "after": [
-        "^"
-      ],
-      "before": [
-        "H"
-      ]
-    },
-    {
-      "after": [
-        "$"
-      ],
-      "before": [
-        "L"
-      ]
-    }
-  ],
   "vim.useSystemClipboard": true,
-  "vim.visualModeKeyBindings": [
-    {
-      "after": [
-        "^"
-      ],
-      "before": [
-        "H"
-      ]
-    },
-    {
-      "after": [
-        "$"
-      ],
-      "before": [
-        "L"
-      ]
-    },
-    {
-      "after": [
-        "<C-D>"
-      ],
-      "before": [
-        "J"
-      ]
-    },
-    {
-      "after": [
-        "<C-U>"
-      ],
-      "before": [
-        "K"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "w"
-      ],
-      "commands": [
-        "workbench.action.files.save"
-      ]
-    }
-  ]
+  "vim.normalModeKeyBindings": [
+    { "before":["<leader>", "r"], "commands":["editor.action.rename"] },
+    { "before":["<leader>", "w"], "commands":["workbench.action.files.save"] },
+    { "before":["leader", "k"], "commands":["editor.action.showHover"] },
+    { "before":["[", "e"], "commands":["editor.action.marker.prev"] },
+    { "before":["]", "e"], "commands":["editor.action.marker.next"] },
+    { "before":["<space>", "d", "f"], "commands":["delete-function.deleteFunction"] },
+    { "before":["<leader>", "i"], "commands":["extension.toggleBool"], "when":"editorTextFocus" },
+    { "before":["<leader>", "b"], "commands":["editor.action.revealDefinition"] },
+    { "before":["<leader>", "q"], "commands":["workbench.action.closeGroup", "workbench.action.closeActiveEditor"] },
+    { "after":["^"], "before":["H"] },
+    { "after":["$"], "before":["L"] },
+    { "after":["<C-D>"], "before":["J"] },
+    { "after":["<C-U>"], "before":["K"] }
+  ],
+  "vim.operatorPendingModeKeyBindings":[
+    { "after":["^"], "before":["H"] },
+    { "after":["$"], "before":["L"] }
+  ],
+  "vim.visualModeKeyBindings":[
+    { "after":["^"], "before":["H"] },
+    { "after":["$"], "before":["L"] },
+    { "after":["<C-D>"], "before":["J"] },
+    { "after":["<C-U>"], "before":["K"] },
+    { "before":["<leader>", "w"], "commands":["workbench.action.files.save"] }
+  ],
+
+  // ===================== Version / Tools =====================
+  "versionlens.suggestions.showOnStartup": true
 }
