@@ -1,10 +1,7 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
-  {
-    "key": "cmd+n",
-    "command": "explorer.newFile"
-  },
-  // 新建文件/文件夹
+  { "key": "cmd+n", "command": "explorer.newFile" },
+  // New file/folder
   {
     "key": "a",
     "command": "explorer.newFile",
@@ -19,7 +16,7 @@
     "key": "shift+cmd+n",
     "command": "explorer.newFolder"
   },
-  // 复制/剪切/粘贴
+  // Copy/Cut/Paste
   {
     "key": "y",
     "command": "filesExplorer.copy",
@@ -78,7 +75,7 @@
   {
     "key": "cmd+q"
   },
-  // 切换左右 panel
+  // Switch left/right panel of terminal
   {
     "key": "cmd+[",
     "command": "workbench.action.previousPanelView",
@@ -89,26 +86,24 @@
     "command": "workbench.action.nextPanelView",
     "when": "panelFocus"
   },
-  // 最大化终端
+  // Maximize terminal
   {
     "key": "cmd+shift+enter",
     "command": "workbench.action.toggleMaximizedPanel",
     "when": "terminalFocus"
   },
-  // 上下拉伸终端（快捷键原本是编辑器整体放大缩小, 被我禁用了）
+  // Stretch terminal up/down (originally the shortcut was to zoom in/out the entire editor, which I disabled)
   {
     "key": "cmd+shift+-",
     "command": "workbench.action.terminal.resizePaneDown",
-    "when": "panelFocus"
-    // "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
   },
   {
     "key": "cmd+shift+=",
     "command": "workbench.action.terminal.resizePaneUp",
-    "when": "panelFocus"
-    // "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
   },
-  // 左右终端聚焦
+  // Left and right terminals focus
   {
     "key": "cmd+shift+h",
     "command": "workbench.action.terminal.focusPreviousPane",
@@ -129,7 +124,12 @@
     "command": "workbench.action.terminal.focusNext",
     "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
   },
-  // 可以从终端返回编辑区中而不关闭终端
+  // Can return to the editing area from the terminal without closing the terminal.
+  {
+    "key": "cmd+shift+j",
+    "command": "workbench.action.navigateDown",
+    "when": "terminal.active && terminalFocus"
+  },
   {
     "key": "cmd+shift+k",
     "command": "workbench.action.navigateUp",
