@@ -153,7 +153,7 @@
   ],
   "cSpell.allowCompoundWords": true,
   "cSpell.language": "en,en-US",
-  "cSpell.userWords": ["cfgs", "clovu", "iconify", "objc", "tauri"],
+
 
   // ===================== Misc =====================
   "css.lint.unknownAtRules": "ignore",
