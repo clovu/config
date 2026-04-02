@@ -1,0 +1,2 @@
+custom-shader = shaders/cursor_sweep.glsl
+custom-shader = shaders/cursor_warp.glsl

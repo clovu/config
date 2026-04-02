@@ -5,6 +5,10 @@
 # Reload: Cmd+Shift+, (macOS)
 # View options: ghostty +show-config --default --docs
 
+# --- Shader ---
+custom-shader = shaders/cursor_sweep.glsl
+custom-shader = shaders/cursor_warp.glsl
+
 # --- Platform ---
 macos-option-as-alt = true
 
@@ -99,3 +103,4 @@ palette = 12=#7fb4ca
 palette = 13=#938aa9
 palette = 14=#7aa89f
 palette = 15=#dcd7ba
+
