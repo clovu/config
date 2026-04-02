@@ -1,41 +1,100 @@
 {
   "recommendations": [
+    // Highlight errors and warnings inline
     "usernamehw.errorlens",
+    // Markdown linting and style checks
     "DavidAnson.vscode-markdownlint",
+    // TOML syntax support and validation
     "tamasfe.even-better-toml",
+    // Official Go language tooling
     "golang.go",
+    // Proto3 syntax highlighting and support
     "zxh404.vscode-proto3",
+    // Highlight TODO/FIXME and similar tags
     "wayou.vscode-todo-highlight",
+    // Manage TODO comments in a tree view
     "Gruntfuggly.todo-tree",
+    // Generate code screenshots quickly
     "adpyke.codesnap",
+    // Convert text/identifier naming cases
     "wmaurer.change-case",
+    // Show inline array index hints
     "antfu.array-index-inlay",
+    // Customize VS Code background image
     "shalldie.background",
-    // theme
+
+    // Themes and icons
+    // Extra theme collection
     "lakshits11.best-themes-redefined",
+    // Monokai Pro theme
     "monokai.theme-monokai-pro-vscode",
-    // JS/TS
-    "Vue.volar",
+    // File icon theme
+    "tal7aouy.icons",
+
+    // Frontend and JS/TS
+    // Vue language service (Volar)
+    "vue.volar",
+    // Common Vue snippets
     "sdras.vue-vscode-snippets",
+    // ESLint code quality checks
     "dbaeumer.vscode-eslint",
+    // Vitest snippets
     "deinsoftware.vitest-snippets",
-    "dbaeumer.vscode-eslint",
+    // Tailwind CSS IntelliSense
     "bradlc.vscode-tailwindcss",
+    // Tauri app development support
     "tauri-apps.tauri-vscode",
+    // UnoCSS utility-first styling support
     "antfu.unocss",
+    // Vitest test explorer
     "vitest.explorer",
+    // Convert normal strings <-> template strings
     "meganrogge.template-string-converter",
+    // Search inside node_modules
     "jasonnutter.search-node-modules",
-    // Vim
-    // I use the cuixiaorui.cvim plugin instead of vscodevim.vim because it provides very convenient flash jumps
+    // Svelte language support
+    "svelte.svelte-vscode",
+
+    // Vim and editing enhancements
+    // Vim-like editing experience (primary)
     "cuixiaorui.cvim",
-    // Delete the function under the cursor
+    // Delete function under cursor quickly
     "cuixiaorui.delete-function",
-    // Quickly toggle boolea, change `true` to `false` or `fase` to `true`
+    // Toggle boolean values true/false quickly
     "silesky.toggle-boolean",
-    // Rust
+
+    // Rust and C/C++ debugging
+    // clang-format code formatting
     "xaver.clang-format",
+    // LLDB debugger support
     "vadimcn.vscode-lldb",
-    "rust-lang.rust-analyzer"
+    // Rust language analysis and completion
+    "rust-lang.rust-analyzer",
+
+    // Tooling and developer productivity
+    // pnpm catalog version hints
+    "antfu.pnpm-catalog-lens",
+    // Show current file location in project
+    "antfu.where-am-i",
+    // Git history and change visualization
+    "eamodio.gitlens",
+    // EditorConfig support (.editorconfig)
+    "editorconfig.editorconfig",
+    // GitHub Actions workflow support
+    "github.vscode-github-actions",
+    // SVG preview
+    "jock.svg",
+    // i18n translation management
+    "lokalise.i18n-ally",
+    // Mermaid chart editing and preview
+    "mermaidchart.vscode-mermaid-chart",
+    // Dev Container support
+    "ms-azuretools.vscode-containers",
+    // Docker support
+    "ms-azuretools.vscode-docker",
+    // Package version update hints
+    "pflannery.vscode-versionlens",
+    // Spell checking for comments/text
+    "streetsidesoftware.code-spell-checker"
   ]
 }
